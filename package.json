@@ -1,0 +1,12 @@
+{
+  "name": "welzorg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./src/style/main.css -o ./dist/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.2"
+  }
+}

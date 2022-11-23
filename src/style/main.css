@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+}
+
+@layer utilities {
+    .navbutton-status {
+        @apply border-white transition duration-300 ease-in-out;
+    }
+
+    .subnav-style {
+        @apply pl-2 pr-40 py-2 border-2 border-white rounded-sm hover:border-2 hover:bg-whisper focus:bg-whisper focus:border-violet focus:outline-none transition duration-300 ease-in-out;
+    }
+}
+
+/* focus:outline-none focus:border-violet hover:border-y-violet hover:bg-whisper focus:bg-whisper */
+
+li.active-nav > button {
+     @apply border-b-violet bg-whisper;
+}
