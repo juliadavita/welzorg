@@ -12,7 +12,7 @@
     }
 
     .subnav-style {
-        @apply pl-2 pr-40 py-2 border-2 border-white rounded-sm hover:border-2 hover:bg-whisper focus:bg-whisper focus:border-violet focus:outline-none transition duration-300 ease-in-out;
+        @apply pl-2 pr-80 py-2 border-2 border-white rounded-sm hover:border-2 hover:bg-whisper focus:bg-whisper focus:border-violet focus:outline-none transition duration-300 ease-in-out;
     }
 }
 

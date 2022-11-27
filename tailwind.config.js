@@ -9,7 +9,8 @@ module.exports = {
       whisper: '#F3F0F6',
       'lightning-yellow': '#FDC513',
       white: '#FFF',
-      charcoal: '333333'
+      charcoal: '333333',
+      current: 'currentColor'
     },
     fontFamily: {
       'sans': ['Source Sans Pro', 'sans-serif']
