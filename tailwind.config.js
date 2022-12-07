@@ -9,7 +9,8 @@ module.exports = {
       whisper: '#F3F0F6',
       'lightning-yellow': '#FDC513',
       white: '#FFF',
-      charcoal: '333333',
+      charcoal: '#333333',
+      grey: '#EEEEEE',
       current: 'currentColor'
     },
     fontFamily: {
@@ -31,15 +32,27 @@ module.exports = {
     container: {
       center: true,
     }, 
-    extend: {},
+    extend: {
+      height: {
+        'mobile-full-height': 'calc(100vh - 4.5rem)'
+      }
+    },
   },
   plugins: [
-  plugin(function peerAriaExpanded({ addVariant }) {
-    addVariant('peer-expanded', `:merge(.peer)[aria-expanded="true"] ~ &`);
-  })],
+    plugin(function peerAriaExpanded({ addVariant }) {
+      addVariant('peer-expanded', `:merge(.peer)[aria-expanded="true"] ~ &`);
+    }),
+    plugin(function openVariant({ addVariant, e }) {
+      addVariant('menu-open', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.menu-is-open .${e(`menu-open${separator}${className}`)}`;
+        });
+      });
+    })
+  ],
   variants: {
     extend: {
-      visibility: ['peer-expanded']
+      visibility: ['peer-expanded', 'menu-open']
     }
   }
 }

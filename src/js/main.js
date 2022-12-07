@@ -31,14 +31,14 @@ for (const listItem of listItems) {                                 // Loop over
 // function open submenu with space, enter or arrow
 document.addEventListener('keyup', (event) => {
     if (event.code === 'Space' || event.code === 'Enter' || event.code === 'ArrowDown') {
-        const currentFocussedElement = document.activeElement;                      // Het element waar we nu op focussen.
-        if (hasPopup(currentFocussedElement) === true) {                            // Heeft dat element een aria-haspopup attribuut? Zo ja, dan is het een van onze buttons.
+        const currentFocussedElement = document.activeElement;                                  // Het element waar we nu op focussen.
+        if (hasPopup(currentFocussedElement) === true) {                                        // Heeft dat element een aria-haspopup attribuut? Zo ja, dan is het een van onze buttons.
             const listItem = currentFocussedElement.parentElement;
-            if (isOpen(currentFocussedElement) === true) {                          // Staat de aria-expanded attribute nu op "true"? Oftewel is hij open?
-                currentFocussedElement.setAttribute('aria-expanded', 'false');      // Zet de aria-expanded attribute nu op false
+            if (isOpen(currentFocussedElement) === true) {                                      // Staat de aria-expanded attribute nu op "true"? Oftewel is hij open?
+                currentFocussedElement.setAttribute('aria-expanded', 'false');                  // Zet de aria-expanded attribute nu op false
                 removeActiveClass(listItem);
             } else {
-                currentFocussedElement.setAttribute('aria-expanded', 'true');       // anders zet aria-expanded attribute op true
+                currentFocussedElement.setAttribute('aria-expanded', 'true');                   // Anders zet aria-expanded attribute op true
                 addActiveClass(listItem);
             }
         }
@@ -69,10 +69,19 @@ function removeActiveClass(listItem) {
     listItem.classList.remove('active-nav');
 }
 
-// function doSomethingLater(callback) {
-//     setTimeout(callback, 2000);
-// }
+// Mobile menu 
 
-// doSomethingLater(function() {
-//   console.log('hello');
-// });
+const menuButton = document.querySelector('.mobile-button');
+
+menuButton.addEventListener('click', (event) => {
+    // const openMenu = document.body.classList.toggle('menu-is-open');
+    const selectHTML = document.querySelector('html');
+    const openMenu = selectHTML.classList.toggle('menu-is-open')
+    console.log(selectHTML);
+
+    if (openMenu === true) {
+        setAriaExpandedTrue(menuButton);
+    } else {
+        setAriaExpandedFalse(menuButton)
+    }
+});
