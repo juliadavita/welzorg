@@ -20,7 +20,7 @@ for (const listItem of listItems) {                                 // Loop over
     
     listItem.addEventListener('focusout', (event) => {                  // closes submenu if not focussed anymore
         const currentFocussedElement = event.relatedTarget;
-        if (currentFocussedElement.closest('.js-submenu') === null) {
+        if (currentFocussedElement !== null && currentFocussedElement.closest('.js-submenu') === null) {
             setAriaExpandedFalse(navButton);
             removeActiveClass(listItem);
         }
@@ -69,6 +69,7 @@ function removeActiveClass(listItem) {
     listItem.classList.remove('active-nav');
 }
 
+
 // Mobile menu 
 
 const menuButton = document.querySelector('.mobile-button');
@@ -77,7 +78,6 @@ menuButton.addEventListener('click', (event) => {
     // const openMenu = document.body.classList.toggle('menu-is-open');
     const selectHTML = document.querySelector('html');
     const openMenu = selectHTML.classList.toggle('menu-is-open')
-    console.log(selectHTML);
 
     if (openMenu === true) {
         setAriaExpandedTrue(menuButton);
@@ -85,3 +85,11 @@ menuButton.addEventListener('click', (event) => {
         setAriaExpandedFalse(menuButton)
     }
 });
+
+const subButton = document.querySelector('.js-close-sub');
+const navButton = document.querySelector('.js-nav-button');
+
+subButton.addEventListener('click', (event) => {
+   setAriaExpandedFalse(navButton)
+   console.log(navButton)
+})

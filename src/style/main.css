@@ -8,10 +8,15 @@
 
 @layer utilities {
     .subnav-style {
-        @apply pl-2 pr-80 py-2 border-2 border-white rounded-sm hover:border-2 hover:bg-whisper focus:bg-whisper focus:border-violet focus:outline-none transition duration-300 ease-in-out;
+        @apply flex border-y-2 border-b-whisper md:border-b-white border-t-white
+        rounded-sm w-full md:w-96 md:my-2 md:p-2 p-3
+        hover:border-2 hover:bg-whisper focus:bg-whisper focus:border-violet focus:outline-none transition duration-300 ease-in-out
+        ;
     }
+}
 
-    .menu-is-open {
-        @apply overflow-hidden;
-    }
+/* focus:outline-none focus:border-violet hover:border-y-violet hover:bg-whisper focus:bg-whisper */
+
+li.active-nav > button {
+     @apply border-b-violet bg-whisper;
 }

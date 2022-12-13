@@ -63,9 +63,9 @@
                         </li>
                         
                         <li class="flex">
-                            <a href="/" class="flex rounded-sm items-center p-1.5 px-3 my-auto bg-white mx-2 transition duration-300 ease-in-out hover:bg-lightning-yellow focus:bg-lightning-yellow">
-                                <svg class="float-left pr-1" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 0C4.0275 0 0 4.0275 0 9C0 13.9725 4.0275 18 9 18C13.9725 18 18 13.9725 18 9C18 4.0275 13.9725 0 9 0ZM9 2.7C10.4895 2.7 11.7 3.9105 11.7 5.4C11.7 6.894 10.4895 8.1 9 8.1C7.5105 8.1 6.3 6.894 6.3 5.4C6.3 3.9105 7.5105 2.7 9 2.7ZM9 15.48C6.7455 15.48 4.7655 14.328 3.6 12.582C3.6225 10.7955 7.2045 9.81 9 9.81C10.7955 9.81 14.373 10.7955 14.4 12.582C13.2345 14.328 11.2545 15.48 9 15.48Z" fill="#51277F"/>
+                            <a href="/" class="flex justify-between rounded-sm items-center p-1.5 px-3 my-auto bg-white mx-2 transition duration-300 ease-in-out text-violet">
+                                <svg class="pr-1 fill-current" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 0C4.0275 0 0 4.0275 0 9C0 13.9725 4.0275 18 9 18C13.9725 18 18 13.9725 18 9C18 4.0275 13.9725 0 9 0ZM9 2.7C10.4895 2.7 11.7 3.9105 11.7 5.4C11.7 6.894 10.4895 8.1 9 8.1C7.5105 8.1 6.3 6.894 6.3 5.4C6.3 3.9105 7.5105 2.7 9 2.7ZM9 15.48C6.7455 15.48 4.7655 14.328 3.6 12.582C3.6225 10.7955 7.2045 9.81 9 9.81C10.7955 9.81 14.373 10.7955 14.4 12.582C13.2345 14.328 11.2545 15.48 9 15.48Z"/>
                                 </svg>                                    
                                 <span>Mijn Welzorg</span>
                             </a>
@@ -86,44 +86,51 @@
         </form>
         
         <!-- Site navigatie -->
-        <nav id="site-nav" aria-labelledby="mobile-button" class="absolute h-mobile-full-height md:h-auto md:relative invisible menu-open:visible md:visible top-[4.5rem] md:top-0 bg-grey block w-full my-auto px-5 md:px-10 font-sans text-violet shadow-md z-10" aria-label="Site navigatie">
+        <nav id="site-nav" aria-labelledby="mobile-button" class="absolute md:relative md:h-auto invisible menu-open:visible md:visible top-[4.5rem] md:top-0 bg-grey md:bg-white block w-full my-auto md:px-10 font-sans text-violet shadow-md z-10" aria-label="Site navigatie">
             <div class="flex max-w-screen-lg bg-white container gap-4 py-3 md:py-0 justify-between flex-col md:flex-row">
                 <ul aria-label="Hoofd navigatie" role="menubar" class="my-auto flex flex-col md:flex-row">
                     <li role="none" class="js-li flex">
-                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-white border-b-whisper border-t-white md:border-white transition duration-300 ease-in-out">
+                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button flex peer w-full md:w-fit items-center gap-2 border-y-2 p-3 border-b-whisper border-t-white md:border-white transition duration-300 ease-in-out">
                             <span>Hulpmiddelen</span> 
                             <svg class="hidden md:block" width="10" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.16212 4.26039e-07L-2.96353e-07 1.22022L6.5 8L13 1.21337L11.8379 -4.06129e-08L6.5 5.57326L1.16212 4.26039e-07Z" fill="#51277F"/>
                             </svg>
-                            <svg class="ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
+                            <svg class="block md:hidden ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
                                 <path class="fill-current" d="M113.3 47.41l183.1 191.1c4.469 4.625 6.688 10.62 6.688 16.59s-2.219 11.97-6.688 16.59l-183.1 191.1c-9.152 9.594-24.34 9.906-33.9 .7187c-9.625-9.125-9.938-24.38-.7187-33.91l168-175.4L78.71 80.6c-9.219-9.5-8.906-24.78 .7187-33.91C88.99 37.5 104.2 37.82 113.3 47.41z"/>
                             </svg>
                         </button>
                         
-                        <div class="absolute left-0 top-full w-full px-10 bg-white p-3 shadow-md invisible peer-expanded:visible">
-                            <div class="flex container max-w-screen-lg w-full">
-                                <ul aria-label="Hulpmiddelen submenu" class="js-submenu md:flex-row">
-                                    <li role="none" class="my-2">
+                        <div class="absolute flex w-full left-0 top:0 md:top-full md:px-10 bg-white md:p-3 shadow-md hidden peer-expanded:block">
+                            <div class="flex flex-col container max-w-screen-lg w-full">
+                                <button class="js-close-sub">
+                                    <svg class="block md:hidden mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="10">
+                                        <path d="M206.7 464.6l-183.1-191.1C18.22 267.1 16 261.1 16 256s2.219-11.97 6.688-16.59l183.1-191.1c9.152-9.594 24.34-9.906 33.9-.7187c9.625 9.125 9.938 24.37 .7187 33.91L73.24 256l168 175.4c9.219 9.5 8.906 24.78-.7187 33.91C231 474.5 215.8 474.2 206.7 464.6z"/>
+                                    </svg>
+                                    <span>Hulpmiddelen</span>
+                                </button>
+
+                                <ul aria-label="Hulpmiddelen submenu" class="js-submenu md:flex-row w-full">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Alle Hulpmiddelen</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
-                                        <a role="menuitem" class="subnav-style" href="/">Rolstoelen</a>
+                                    <li role="none" class="flex">
+                                        <a role="menuitem" href="/" class="subnav-style" >Rolstoelen</a>
                                     </li>
                                     
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Scootmobielen</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Aangepaste fietsen</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Handbikes</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Sporten</a>
                                     </li>
                                 </ul>
@@ -132,32 +139,38 @@
                     </li>
                     
                     <li role="none" class="js-li flex">
-                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-b-whisper border-t-white md:border-white transition duration-300 ease-in-out">
+                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-b-whisper border-t-white hover:focus:border-t-whisper md:border-white transition duration-300 ease-in-out">
                             <span>Auto</span> 
                             <svg class="hidden md:block" width="10" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.16212 4.26039e-07L-2.96353e-07 1.22022L6.5 8L13 1.21337L11.8379 -4.06129e-08L6.5 5.57326L1.16212 4.26039e-07Z" fill="#51277F"/>
                             </svg>
-                            <svg class="ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
+                            <svg class="block md:hidden ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
                                 <path class="fill-current" d="M113.3 47.41l183.1 191.1c4.469 4.625 6.688 10.62 6.688 16.59s-2.219 11.97-6.688 16.59l-183.1 191.1c-9.152 9.594-24.34 9.906-33.9 .7187c-9.625-9.125-9.938-24.38-.7187-33.91l168-175.4L78.71 80.6c-9.219-9.5-8.906-24.78 .7187-33.91C88.99 37.5 104.2 37.82 113.3 47.41z"/>
                             </svg>
                         </button>
                         
-                        <div class="absolute left-0 top-full w-full px-10 bg-white p-3 shadow-md invisible peer-expanded:visible">
+                        <div class="absolute flex left-0 top-full w-full md:px-10 bg-white shadow-md invisible peer-expanded:visible">
                             <div class="flex container max-w-screen-lg w-full">
-                                <ul aria-label="Auto submenu" class="js-submenu">
-                                    <li role="none" class="my-2">
+                                <ul aria-label="Auto submenu" class="js-submenu md:flex-row w-full">
+                                    <li role="none" class="flex md:hidden font-semibold justify-between items-center my-2">
+                                        <a role="menuitem" href="/" class="subnav-style">
+                                            <svg class="block md:hidden mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="10"><path d="M206.7 464.6l-183.1-191.1C18.22 267.1 16 261.1 16 256s2.219-11.97 6.688-16.59l183.1-191.1c9.152-9.594 24.34-9.906 33.9-.7187c9.625 9.125 9.938 24.37 .7187 33.91L73.24 256l168 175.4c9.219 9.5 8.906 24.78-.7187 33.91C231 474.5 215.8 474.2 206.7 464.6z"/></svg>
+                                            Auto
+                                        </a>
+                                    </li>
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Auto op maat</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Private lease</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Aangepaste occasions</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Auto aanpassingen</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Zonnebloemauto</a>
                                     </li>
                                 </ul>
@@ -165,51 +178,57 @@
                         </div>
                     </li>
                     <li role="none" class="js-li flex">
-                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-b-whisper border-t-white md:border-white transition duration-300 ease-in-out">
+                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-b-whisper border-t-white hover:focus:border-t-whisper md:border-white transition duration-300 ease-in-out">
                             <span>Wonen</span> 
                             <svg class="hidden md:block" width="10" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.16212 4.26039e-07L-2.96353e-07 1.22022L6.5 8L13 1.21337L11.8379 -4.06129e-08L6.5 5.57326L1.16212 4.26039e-07Z" fill="#51277F"/>
                             </svg>
-                            <svg class="ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
+                            <svg class="block md:hidden ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
                                 <path class="fill-current" d="M113.3 47.41l183.1 191.1c4.469 4.625 6.688 10.62 6.688 16.59s-2.219 11.97-6.688 16.59l-183.1 191.1c-9.152 9.594-24.34 9.906-33.9 .7187c-9.625-9.125-9.938-24.38-.7187-33.91l168-175.4L78.71 80.6c-9.219-9.5-8.906-24.78 .7187-33.91C88.99 37.5 104.2 37.82 113.3 47.41z"/>
                             </svg>
                         </button>
-                        <div class="absolute left-0 top-full w-full px-10 bg-white p-3 shadow-md invisible peer-expanded:visible">
+                        <div class="absolute flex left-0 top-full w-full md:px-10 bg-white shadow-md invisible peer-expanded:visible">
                             <div class="flex container max-w-screen-lg w-full">
-                                <ul aria-label="Wonen submenu" class="js-submenu">
-                                    <li role="none" class="my-2">
+                                <ul aria-label="Wonen submenu" class="js-submenu md:flex-row w-full">
+                                    <li role="none" class="flex md:hidden font-semibold justify-between items-center my-2">
+                                        <a role="menuitem" href="/" class="subnav-style">
+                                            <svg class="block md:hidden mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="10"><path d="M206.7 464.6l-183.1-191.1C18.22 267.1 16 261.1 16 256s2.219-11.97 6.688-16.59l183.1-191.1c9.152-9.594 24.34-9.906 33.9-.7187c9.625 9.125 9.938 24.37 .7187 33.91L73.24 256l168 175.4c9.219 9.5 8.906 24.78-.7187 33.91C231 474.5 215.8 474.2 206.7 464.6z"/></svg>
+                                            Wonen
+                                        </a>
+                                    </li>
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Woning op maat</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Badkamer</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Toilet</a>
                                     </li>
                                     
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Keuken</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Tillift</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Traplift</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Slaapkamer</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Zorgunit</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Drempelhulp</a>
                                     </li>
                                 </ul>
@@ -218,35 +237,41 @@
                     </li>
 
                     <li role="none" class="js-li flex">
-                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-b-whisper border-t-white md:border-white transition duration-300 ease-in-out">
+                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-b-whisper border-t-white hover:focus:border-t-whisper md:border-white transition duration-300 ease-in-out">
                             <span>Service en advies</span> 
                             <svg class="hidden md:block" width="10" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.16212 4.26039e-07L-2.96353e-07 1.22022L6.5 8L13 1.21337L11.8379 -4.06129e-08L6.5 5.57326L1.16212 4.26039e-07Z" fill="#51277F"/>
                             </svg>
-                            <svg class="ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
+                            <svg class="block md:hidden ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
                                 <path class="fill-current" d="M113.3 47.41l183.1 191.1c4.469 4.625 6.688 10.62 6.688 16.59s-2.219 11.97-6.688 16.59l-183.1 191.1c-9.152 9.594-24.34 9.906-33.9 .7187c-9.625-9.125-9.938-24.38-.7187-33.91l168-175.4L78.71 80.6c-9.219-9.5-8.906-24.78 .7187-33.91C88.99 37.5 104.2 37.82 113.3 47.41z"/>
                             </svg>
                         </button>
 
-                        <div class="absolute left-0 top-full w-full px-10 bg-white p-3 shadow-md invisible peer-expanded:visible">
+                        <div class="absolute flex left-0 top-full w-full md:px-10 bg-white shadow-md invisible peer-expanded:visible">
                             <div class="flex container max-w-screen-lg w-full">
-                                <ul aria-label="Service en advies submenu" class="js-submenu">
-                                    <li role="none" class="my-2">
+                                <ul aria-label="Service en advies submenu" class="js-submenu md:flex-row w-full">
+                                    <li role="none" class="flex md:hidden font-semibold justify-between items-center my-2">
+                                        <a role="menuitem" href="/" class="subnav-style">
+                                            <svg class="block md:hidden mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="10"><path d="M206.7 464.6l-183.1-191.1C18.22 267.1 16 261.1 16 256s2.219-11.97 6.688-16.59l183.1-191.1c9.152-9.594 24.34-9.906 33.9-.7187c9.625 9.125 9.938 24.37 .7187 33.91L73.24 256l168 175.4c9.219 9.5 8.906 24.78-.7187 33.91C231 474.5 215.8 474.2 206.7 464.6z"/></svg>
+                                            Service en Advies
+                                        </a>
+                                    </li>
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Klantenservice</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Vergoeding en financiëring</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Gemeenten</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Letselschade oplossingen</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Reperatie en onderhoud</a>
                                     </li>
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Rij- of gewenningslessen</a>
                                     </li>
                                 </ul>
@@ -255,40 +280,46 @@
                     </li>
 
                     <li role="none" class="js-li flex">
-                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-white transition duration-300 ease-in-out">
+                        <button aria-expanded="false" aria-haspopup="true" class="js-nav-button w-full md:w-fit flex peer items-center gap-2 border-y-2 p-3 border-white border-t-white hover:focus:border-t-whisper transition duration-300 ease-in-out">
                             <span>Over ons</span> 
                             <svg class="hidden md:block" width="10" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.16212 4.26039e-07L-2.96353e-07 1.22022L6.5 8L13 1.21337L11.8379 -4.06129e-08L6.5 5.57326L1.16212 4.26039e-07Z" fill="#51277F"/>
                             </svg>
-                            <svg class="ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
+                            <svg class="block md:hidden ml-auto" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 320 512">
                                 <path class="fill-current" d="M113.3 47.41l183.1 191.1c4.469 4.625 6.688 10.62 6.688 16.59s-2.219 11.97-6.688 16.59l-183.1 191.1c-9.152 9.594-24.34 9.906-33.9 .7187c-9.625-9.125-9.938-24.38-.7187-33.91l168-175.4L78.71 80.6c-9.219-9.5-8.906-24.78 .7187-33.91C88.99 37.5 104.2 37.82 113.3 47.41z"/>
                             </svg>
                         </button>
 
-                        <div class="absolute left-0 top-full w-full px-10 bg-white p-3 shadow-md invisible peer-expanded:visible">
+                        <div class="absolute flex left-0 top-full w-full md:px-10 bg-white shadow-md invisible peer-expanded:visible">
                             <div class="flex container max-w-screen-lg w-full">
-                                <ul aria-label="Over ons submenu" class="js-submenu">
-                                    <li role="none" class="my-2">
+                                <ul aria-label="Over ons submenu" class="js-submenu md:flex-row w-full">
+                                    <li role="none" class="flex md:hidden font-semibold justify-between items-center my-2">
+                                        <a role="menuitem" href="/" class="subnav-style">
+                                            <svg class="block md:hidden mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="10"><path d="M206.7 464.6l-183.1-191.1C18.22 267.1 16 261.1 16 256s2.219-11.97 6.688-16.59l183.1-191.1c9.152-9.594 24.34-9.906 33.9-.7187c9.625 9.125 9.938 24.37 .7187 33.91L73.24 256l168 175.4c9.219 9.5 8.906 24.78-.7187 33.91C231 474.5 215.8 474.2 206.7 464.6z"/></svg>
+                                            Over ons
+                                        </a>
+                                    </li>
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Missie</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Locaties</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Ambitie</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Klantenverhalen</a>
                                     </li>
 
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Werken bij</a>
                                     </li>
                                     
-                                    <li role="none" class="my-5">
+                                    <li role="none" class="flex">
                                         <a role="menuitem" href="/" class="subnav-style">Nieuws</a>
                                     </li>
                                 </ul>
@@ -307,12 +338,12 @@
             </div>
 
             <ul class="flex flex-row justify-between md:hidden">
-                <li class="bg-violet text-white font-semibold w-1/2 p-3">
-                    <a>Contact</a>
+                <li class="bg-violet text-white font-semibold w-1/2 p-5">
+                    <a class="p-3">Contact</a>
                 </li>
 
-                <li class="text-violet font-semibold underline w-1/2 p-3">
-                    <a>WMO</a>
+                <li class="bg-white text-violet font-semibold underline w-1/2 p-5">
+                    <a class="p-3">WMO</a>
                 </li>
             </ul>
         </nav>
@@ -629,15 +660,15 @@
                             <p>Wilt u uw eigen auto of een occasion laten aanpassen? Wilt u een aangepaste auto leasen? Of een dagje eropuit met de Zonnebloemauto. Auto op Maat helpt u graag verder. Onze medewerkers informeren u ook over de verschillende financieringsvormen.</p>
                         </div>
                         <div class="absolute bottom-0 flex justify-between items-center rounded-b-sm text-center w-full">
-                            <a href="/" class="bg-violet p-4 text-white h-full rounded-bl-sm">
-                                <div class="flex justify-between items-center">
+                            <a href="/" class="h-full rounded-bl-sm group">
+                                <div class="flex justify-between items-center bg-violet p-4 text-white group-hover:bg-lightning-yellow group-hover:text-violet transition duration-300 ease-in-out ">
                                     <svg class="mr-2" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.3151 0.120385C10.5151 0.270764 10.62 0.530705 10.5824 0.790646L9.3151 9.72745C9.28539 9.93583 9.16856 10.1184 8.99827 10.2216C8.82797 10.3247 8.62402 10.3376 8.44382 10.2559L5.94286 9.12808L5.14881 10.7285C5.04584 10.9369 4.82604 11.0422 4.61416 10.9842C4.40229 10.9262 4.25377 10.72 4.25377 10.4836V8.4213C4.25377 8.30745 4.28942 8.19573 4.35476 8.10551L7.62799 3.53828C7.67749 3.38576 7.49928 3.23108 7.37057 3.35783L3.82606 6.83588L3.1924 7.45673C3.01022 7.63504 2.75082 7.68445 2.5231 7.58133L0.839954 6.82084C0.618174 6.71987 0.467681 6.49216 0.45382 6.23007C0.439959 5.96798 0.56273 5.72093 0.772628 5.58988L9.6438 0.0903095C9.85568 -0.040735 10.1171 -0.0278454 10.3171 0.120385H10.3151Z" fill="white"/>
+                                        <path class="fill-current" d="M10.3151 0.120385C10.5151 0.270764 10.62 0.530705 10.5824 0.790646L9.3151 9.72745C9.28539 9.93583 9.16856 10.1184 8.99827 10.2216C8.82797 10.3247 8.62402 10.3376 8.44382 10.2559L5.94286 9.12808L5.14881 10.7285C5.04584 10.9369 4.82604 11.0422 4.61416 10.9842C4.40229 10.9262 4.25377 10.72 4.25377 10.4836V8.4213C4.25377 8.30745 4.28942 8.19573 4.35476 8.10551L7.62799 3.53828C7.67749 3.38576 7.49928 3.23108 7.37057 3.35783L3.82606 6.83588L3.1924 7.45673C3.01022 7.63504 2.75082 7.68445 2.5231 7.58133L0.839954 6.82084C0.618174 6.71987 0.467681 6.49216 0.45382 6.23007C0.439959 5.96798 0.56273 5.72093 0.772628 5.58988L9.6438 0.0903095C9.85568 -0.040735 10.1171 -0.0278454 10.3171 0.120385H10.3151Z"/>
                                         </svg>
                                     Vul formulier in
                                 </div> 
                             </a>
-                            <a href="tel:08000200142" class="py-4 text-charcoal h-full rounded-br-sm">
+                            <a href="tel:08000200142" class="py-4 text-charcoal h-full rounded-br-sm group">
                                 <div class="flex justify-between items-center pr-5">
                                     <svg class="mr-2" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.20097 0.528977C4.04852 0.129385 3.64661 -0.083301 3.26253 0.0305612L1.52027 0.546164C1.17578 0.649284 0.936218 0.988722 0.936218 1.37542C0.936218 6.69042 4.90777 11 9.80588 11C10.1623 11 10.4751 10.7401 10.5701 10.3662L11.0453 8.4757C11.1502 8.05892 10.9542 7.62281 10.5859 7.45738L8.6853 6.59805C8.36258 6.45196 7.98839 6.55293 7.76863 6.84725L6.96878 7.90639C5.57497 7.19099 4.44647 5.96643 3.78718 4.454L4.76324 3.58822C5.03448 3.3476 5.12753 2.94371 4.9929 2.59353L4.20097 0.531125V0.528977Z" fill="#333333"/>
