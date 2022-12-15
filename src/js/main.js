@@ -1,31 +1,45 @@
-const listItems = document.querySelectorAll('.js-li');              // Select all elements with the js-nav-button class
+const listItems = document.querySelectorAll('.js-li');    
+const subCloseButton = document.querySelectorAll('.js-close-sub');          // Select all elements with the js-nav-button class
+const mobileScreen = matchMedia('(max-width: 767px)');
 
 for (const listItem of listItems) {                                 // Loop over the selected elements - item in array of buttons - automatically selects 'children' from 'parent'
     const navButton = listItem.firstElementChild;                   // Makes variable navButton = the first elementchild of listItem within listItems
     const navButtonHasPopup = hasPopup(navButton);                  // Save variable as navButtonHasPopup if hasPopup 
 
-    listItem.addEventListener('mouseenter', (event) => {           // Listen for mouseenter event on each button (hover)
-        if (navButtonHasPopup) {
-            setAriaExpandedTrue(navButton);                         // first variable: what has to change? second variable: change to what? 
-            addActiveClass(listItem);
-        }
-    });
-
-    listItem.addEventListener('mouseleave', (event) => {           // Listen for mouseleave event on each button (no hover)
-        if (navButtonHasPopup) {
-            setAriaExpandedFalse(navButton);
-            removeActiveClass(listItem);
-        }
-    });
+    if (mobileScreen.matches === true) {
+        navButton.addEventListener('click', (event) => {
+            if (navButtonHasPopup) {
+                setAriaExpandedTrue(navButton);
+            }
+        });
+            
+            
+    } else {
+        listItem.addEventListener('mouseenter', (event) => {           // Listen for mouseenter event on each button (hover)
+            if (navButtonHasPopup) {
+                setAriaExpandedTrue(navButton);                         // first variable: what has to change? second variable: change to what? 
+                addActiveClass(listItem);
+            }
+        });
     
-    listItem.addEventListener('focusout', (event) => {                  // closes submenu if not focussed anymore
-        const currentFocussedElement = event.relatedTarget;
-        if (currentFocussedElement !== null && currentFocussedElement.closest('.js-submenu') === null) {
-            setAriaExpandedFalse(navButton);
-            removeActiveClass(listItem);
-        }
-    });
+        listItem.addEventListener('mouseleave', (event) => {           // Listen for mouseleave event on each button (no hover)
+            if (navButtonHasPopup) {
+                setAriaExpandedFalse(navButton);
+                removeActiveClass(listItem);
+            }
+        });
+        
+        listItem.addEventListener('focusout', (event) => {                  // closes submenu if not focussed anymore
+            const currentFocussedElement = event.relatedTarget;
+            if (currentFocussedElement !== null && currentFocussedElement.closest('.js-submenu') === null) {
+                setAriaExpandedFalse(navButton);
+                removeActiveClass(listItem);
+            }
+        });
+    }
 
+    
+    
 }
 
 // function open submenu with space, enter or arrow
@@ -75,7 +89,6 @@ function removeActiveClass(listItem) {
 const menuButton = document.querySelector('.mobile-button');
 
 menuButton.addEventListener('click', (event) => {
-    // const openMenu = document.body.classList.toggle('menu-is-open');
     const selectHTML = document.querySelector('html');
     const openMenu = selectHTML.classList.toggle('menu-is-open')
 
@@ -86,10 +99,17 @@ menuButton.addEventListener('click', (event) => {
     }
 });
 
-const subButton = document.querySelector('.js-close-sub');
-const navButton = document.querySelector('.js-nav-button');
+const subButtons = document.querySelectorAll('.js-close-sub');
 
-subButton.addEventListener('click', (event) => {
-   setAriaExpandedFalse(navButton)
-   console.log(navButton)
-})
+for (const subButton of subButtons) {
+    subButton.addEventListener('click', (event) => {            
+        const selectClosestListItem = subButton.closest('.js-li');
+        const selectChildButton = selectClosestListItem.querySelector('.js-nav-button');
+        
+        setAriaExpandedFalse(selectChildButton);
+        console.log(selectChildButton);
+    })
+};
+
+
+

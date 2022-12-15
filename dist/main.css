@@ -571,8 +571,8 @@ video {
   left: 0px;
 }
 
-.top-full {
-  top: 100%;
+.top-0 {
+  top: 0px;
 }
 
 .bottom-0 {
@@ -633,6 +633,10 @@ video {
   margin-left: auto;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -661,16 +665,8 @@ video {
   margin-bottom: 3.5rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
-}
-
-.mr-3 {
-  margin-right: 0.75rem;
 }
 
 .block {
@@ -872,11 +868,6 @@ video {
   border-bottom-color: rgb(243 240 246 / var(--tw-border-opacity));
 }
 
-.border-t-whisper {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(243 240 246 / var(--tw-border-opacity));
-}
-
 .border-t-white {
   --tw-border-opacity: 1;
   border-top-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -979,6 +970,11 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -997,11 +993,6 @@ video {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .px-5 {
@@ -1230,10 +1221,6 @@ li.active-nav > button {
   visibility: visible;
 }
 
-.peer[aria-expanded="true"] ~ .peer-expanded\:block {
-  display: block;
-}
-
 .menu-is-open .menu-open\:visible {
   visibility: visible;
 }
@@ -1327,14 +1314,14 @@ li.active-nav > button {
     padding-right: 2.5rem;
   }
 
-  .md\:py-0 {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .md\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .md\:text-left {
