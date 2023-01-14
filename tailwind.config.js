@@ -34,7 +34,8 @@ module.exports = {
     }, 
     extend: {
       height: {
-        'mobile-full-height': 'calc(100vh - 4.5rem)'
+        'mobile-full-height': 'calc(100vh - 4.5rem)',
+        '140': '40rem',
       }
     },
   },

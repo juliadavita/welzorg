@@ -90,7 +90,7 @@ const menuButton = document.querySelector('.mobile-button');
 
 menuButton.addEventListener('click', (event) => {
     const selectHTML = document.querySelector('html');
-    const openMenu = selectHTML.classList.toggle('menu-is-open')
+    const openMenu = selectHTML.classList.toggle('menu-is-open');
 
     if (openMenu === true) {
         setAriaExpandedTrue(menuButton);
